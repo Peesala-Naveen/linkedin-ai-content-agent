@@ -7,9 +7,13 @@ services:
 
     environment:
       - TZ=${TZ}
+
       - DB_TYPE=sqlite
       - DB_SQLITE_POOL_SIZE=1
+
       - NODE_OPTIONS=--max-old-space-size=384
+
+      - N8N_RUNNERS_MODE=external
 
     volumes:
       - /tmp/.n8n:/home/node/.n8n
