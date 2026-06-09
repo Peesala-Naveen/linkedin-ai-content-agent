@@ -1,16 +1,15 @@
 services:
   n8n:
     image: n8nio/n8n
+
     ports:
       - "5678:5678"
 
     environment:
-      - TZ=Asia/Kolkata
-      - N8N_HOST=0.0.0.0
-      - N8N_PORT=5678
+      - TZ=${TZ}
+      - N8N_HOST=${N8N_HOST}
+      - N8N_PORT=${N8N_PORT}
+      - N8N_PROTOCOL=${N8N_PROTOCOL}
 
     volumes:
-      - n8n_data:/home/node/.n8n
-
-volumes:
-  n8n_data:
+      - /tmp/.n8n:/home/node/.n8n
