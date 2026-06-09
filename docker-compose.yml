@@ -8,14 +8,8 @@ services:
     environment:
       - TZ=${TZ}
 
-      - DB_TYPE=sqlite
-      - DB_SQLITE_POOL_SIZE=1
-
       - NODE_OPTIONS=--max-old-space-size=384
 
-      - N8N_HOST=0.0.0.0
-      - N8N_PORT=5678
-      - N8N_PROTOCOL=https
+      - DB_TYPE=sqlite
 
-    volumes:
-      - /tmp/.n8n:/home/node/.n8n
+    command: start
